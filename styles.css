@@ -304,24 +304,97 @@ img{max-width:100%;display:block}
 }
 
 /* Responsive */
+/* =========================
+   RESPONSIVE (ERSETZT ALLE ALTEN @media)
+   ========================= */
+
 @media (max-width: 860px){
-  .brand{min-width:unset}
-  .page__top{flex-direction:column; align-items:flex-start}
+  .container{ width:min(1100px, 94vw); }
+  .page__top{ flex-direction:column; align-items:flex-start; }
+  .grid{ grid-template-columns: 1fr; }
 }
+
+/* Tablet + Mobile */
 @media (max-width: 720px){
-  .grid{grid-template-columns: 1fr}
-  .hero__cols{grid-template-columns: 1fr}
-  .nav{justify-content:flex-start}
+
+  /* HEADER: kompakt, sonst erschießt er alles */
+  .header__inner{
+    padding: 10px 0 !important;
+    gap: 10px !important;
+    align-items: center !important;
+  }
+
+  /* BRAND + LOGO: DAS ist der Hauptkiller bei dir (150px) */
+  .brand{
+    min-width: 0 !important;
+    gap: 10px !important;
+  }
+  .brand img{
+    height: 52px !important;  /* vorher 150px */
+    width: auto !important;
+  }
+  .brand__name{
+    font-size: 18px !important;
+    line-height: 1.1 !important;
+  }
+
+  /* NAV: nicht umbrechen, sondern wischbar machen */
+  .nav{
+    width: 100% !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 8px !important;
+    padding: 6px 0 !important;
+  }
+  .nav a{
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    font-size: 13px !important;
+    padding: 9px 12px !important;
+  }
+
+  /* HERO: kein künstliches padding-top */
+  .hero{
+    padding-top: 0 !important;     /* bei dir war 90px */
+    min-height: 58vh !important;
+    margin: 14px 0 18px !important;
+  }
+  .hero__box{
+    width: 94% !important;
+    padding: 18px !important;
+  }
+  .hero__cols{
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
 }
-@media (max-width: 480px) {
 
-  .nav a {
-    font-size: 13px;
-    padding: 8px 12px;
+/* iPhone klein */
+@media (max-width: 480px){
+
+  .header__inner{
+    padding: 8px 0 !important;
   }
 
-  .hero h1 {
-    font-size: 34px;
+  .brand img{
+    height: 44px !important;
+  }
+  .brand__name{
+    font-size: 16px !important;
   }
 
+  .nav a{
+    font-size: 12.5px !important;
+    padding: 8px 11px !important;
+  }
+
+  .hero__h2{
+    font-size: 21px !important;
+  }
+  .hero__p{
+    font-size: 15px !important;
+  }
 }
