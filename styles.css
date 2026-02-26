@@ -46,6 +46,9 @@ img{max-width:100%;display:block}
 .nav{
   display:flex; flex-wrap:wrap; gap:10px;
   justify-content:flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 .nav a{
   padding:10px 12px;
@@ -187,7 +190,7 @@ img{max-width:100%;display:block}
   box-shadow: var(--shadow);
   min-height: clamp(320px, 62vh, 640px);
   margin: 18px 0 24px;
-
+  padding-top: 90px;
   display:flex;
   align-items:center;      /* vertikal Mitte */
   justify-content:center;  /* horizontal Mitte */
@@ -309,4 +312,16 @@ img{max-width:100%;display:block}
   .grid{grid-template-columns: 1fr}
   .hero__cols{grid-template-columns: 1fr}
   .nav{justify-content:flex-start}
+}
+@media (max-width: 480px) {
+
+  .nav a {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
 }
